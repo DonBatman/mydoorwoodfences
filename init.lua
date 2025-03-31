@@ -14,21 +14,7 @@ if minetest.get_modpath("my_door_wood") then
 	for i in ipairs(fences) do
 		local col = fences[i][1]
 		local des = fences[i][2]
---[[
-	minetest.register_node("mydoorwoodfences:fence_"..col, {
-		description = des.." Fence",
-		drawtype = "fencelike",
-		tiles = {"mydoors_"..col.."_wood.png^[transformR90"},
-		paramtype = "light",
-		is_ground_content = true,
-		selection_box = {
-			type = "fixed",
-			fixed = {-1/8, -1/2, -1/8, 1/8, 1/2, 1/8},
-		},
-		groups = {cracky = 2},
-		sounds = default.node_sound_stone_defaults(),
-	})
---]]
+
 default.register_fence("mydoorwoodfences:fence_"..col, {
 	description = des..(" Fence"),
 	texture = "mydoors_"..col.."_wood.png^[transformR90",
@@ -67,9 +53,9 @@ default.register_fence_rail("mydoorwoodfences:fence_rail_"..col, {
 minetest.register_craft({
 		output = "mydoorwoodfences:fence_black 6",
 		recipe = {
-			{'','my_door_wood:wood_'..col,''},
-			{'','my_door_wood:wood_'..col,''},
-			{'','my_door_wood:wood_'..col,''}
+			{'','',''},
+			{'my_door_wood:wood_'..col,'my_door_wood:wood_'..col,'my_door_wood:wood_'..col},
+			{'','',''}
 			}
 })
 end
