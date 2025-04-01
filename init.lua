@@ -18,10 +18,8 @@ if minetest.get_modpath("my_door_wood") then
 default.register_fence("mydoorwoodfences:fence_"..col, {
 	description = des..(" Fence"),
 	texture = "mydoors_"..col.."_wood.png^[transformR90",
-	inventory_image = "default_fence_overlay.png^mydoors_"..col.."_wood.png^[transformR90" ..
-				"default_fence_overlay.png^[makealpha:255,126,126",
-	wield_image = "default_fence_overlay.png^mydoors_"..col.."_wood.png^[transformR90" ..
-				"default_fence_overlay.png^[makealpha:255,126,126",
+	inventory_image = "mydoorwoodfences_fence_"..col..".png",
+	wield_image = "mydoorwoodfences_fence_"..col..".png",
 	material = "mydoors_"..col.."_wood.png^[transformR90",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2, flammable = 2},
 	sounds = default.node_sound_wood_defaults()
